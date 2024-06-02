@@ -2,7 +2,7 @@
 #include "encrypt.h"
 #include "getChar_input_and_convert_password_characters_to_int.h"
 #include "isValidCommand.h"
-
+// do a project with separate functions like one to interface(functions where the user puts something in the console and other archives .c where you do all the logic functions, i will help you futher.  i write you in discord. 
 
 #define PASSWORD_INITIAL_SIZE 100
 
@@ -29,7 +29,7 @@ void str_to_int(char **_password_string, int *_int)
 	}
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[])// NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO MAN ! leave the parameters empty 
 {
 	if (argc <= 1)
 	{
@@ -44,21 +44,19 @@ int main(int argc, char *argv[])
 			printf("Invalid Command: %s\n", argv[x]);
 			break;
 		}
-
 		// -ef command
 		if (strcmp(argv[x], "-ef") == 0)
 		{
-
 			if (!(argv[x + 1] && strlen(argv[x + 1]) > 2))
 			{
 				printf("-gf (Get file) needs file directory");
-				break;
+				break;// why are you using a break in this if you use break in while loop( and this is bad practice). 
 			}
 
 			if (!isValidPath(argv[x + 1]))
 			{
 				printf("Invalid or path does not exist: %s\n", argv[x + 1]);
-				break;
+				
 			}
 
 			if (!(argv[x + 2]))
@@ -92,9 +90,9 @@ int main(int argc, char *argv[])
 			char *password;
 			puts("------------------------------");
 			printf("| File successfully loaded |\n");
-			puts("------------------------------");
+			puts("------------------------------"); // this is C not ruby 
 
-			puts("");
+			puts("\cls"); // this clean the console 
 			printf("Enter your encryption string: ");
 			int result = getChar_input_and_convert_password_characters_to_int(&password, PASSWORD_INITIAL_SIZE, getchar, &integer_value_of_passowrd);
 			puts("------------------------------");
